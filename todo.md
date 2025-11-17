@@ -39,6 +39,9 @@
 - [x] Listar documentos necessários
 
 ## Deploy
-- [ ] Publicar no GitHub (rafaeltoledoadv/toledododivorcio)
+- [x] Publicar no GitHub (rafaeltoledoadv/toledododivorcio)
 - [ ] Fazer deploy no Vercel
 - [ ] Configurar domínio divorcioem1dia.com
+
+## Correções
+- [ ] Corrigir erro de deploy no Vercel (remover pasta server e configurar como projeto estático)
