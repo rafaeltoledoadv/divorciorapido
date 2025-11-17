@@ -1,8 +1,4 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -23,37 +19,7 @@ import {
 import { toast } from "sonner";
 
 export default function Home() {
-  const [formData, setFormData] = useState({
-    nome: "",
-    email: "",
-    whatsapp: "",
-    tipoDivorcio: "",
-    temFilhos: "",
-    concordaValores: ""
-  });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Rastreamento de conversão
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'conversion', {
-        'send_to': 'AW-17715024874/IhtoCK2c178bEOqnl_9B',
-        'event_category': 'Form',
-        'event_label': 'Contact Form Submission'
-      });
-    }
-
-    toast.success("Mensagem enviada! Entraremos em contato em breve.");
-    setFormData({
-      nome: "",
-      email: "",
-      whatsapp: "",
-      tipoDivorcio: "",
-      temFilhos: "",
-      concordaValores: ""
-    });
-  };
 
   return (
     <div className="min-h-screen">
@@ -596,86 +562,28 @@ export default function Home() {
                 </WhatsAppButton>
               </div>
 
-              {/* Formulário */}
+              {/* Formulário Jotform */}
               <div className="bg-card p-8 rounded-lg border-2">
                 <h3 className="text-2xl font-bold mb-4">Ou Preencha o Formulário</h3>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <Label htmlFor="nome">Nome Completo *</Label>
-                    <Input
-                      id="nome"
-                      value={formData.nome}
-                      onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
-                      required
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="email">E-mail *</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      required
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="whatsapp">WhatsApp *</Label>
-                    <Input
-                      id="whatsapp"
-                      type="tel"
-                      value={formData.whatsapp}
-                      onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
-                      required
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="tipoDivorcio">Tipo de Divórcio *</Label>
-                    <select
-                      id="tipoDivorcio"
-                      value={formData.tipoDivorcio}
-                      onChange={(e) => setFormData({ ...formData, tipoDivorcio: e.target.value })}
-                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                      required
-                    >
-                      <option value="">Selecione...</option>
-                      <option value="cartorio">Divórcio no Cartório</option>
-                      <option value="judicial">Divórcio Judicial Amigável</option>
-                      <option value="nao-sei">Não sei qual escolher</option>
-                    </select>
-                  </div>
-                  <div>
-                    <Label htmlFor="temFilhos">Tem filhos menores? *</Label>
-                    <select
-                      id="temFilhos"
-                      value={formData.temFilhos}
-                      onChange={(e) => setFormData({ ...formData, temFilhos: e.target.value })}
-                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                      required
-                    >
-                      <option value="">Selecione...</option>
-                      <option value="sim">Sim</option>
-                      <option value="nao">Não</option>
-                    </select>
-                  </div>
-                  <div>
-                    <Label htmlFor="concordaValores">Concorda com os valores apresentados? *</Label>
-                    <select
-                      id="concordaValores"
-                      value={formData.concordaValores}
-                      onChange={(e) => setFormData({ ...formData, concordaValores: e.target.value })}
-                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                      required
-                    >
-                      <option value="">Selecione...</option>
-                      <option value="sim">Sim</option>
-                      <option value="preciso-negociar">Preciso negociar</option>
-                    </select>
-                  </div>
-                  <Button type="submit" className="w-full" size="lg">
-                    Enviar Mensagem
-                  </Button>
-                </form>
+                <iframe
+                  id="JotFormIFrame-253206150922044"
+                  title="Contato - Divórcio em 1 Dia"
+                  onLoad={() => window.parent.scrollTo(0,0)}
+                  allowTransparency={true}
+                  allow="geolocation; microphone; camera; fullscreen"
+                  src="https://form.jotform.com/253206150922044"
+                  frameBorder="0"
+                  style={{
+                    minWidth: '100%',
+                    maxWidth: '100%',
+                    height: '539px',
+                    border: 'none'
+                  }}
+                  scrolling="no"
+                >
+                </iframe>
+                <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+                <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-253206150922044']", "https://form.jotform.com/")</script>
               </div>
             </div>
           </div>

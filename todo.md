@@ -45,4 +45,5 @@
 
 ## Correções
 - [x] Corrigir erro de deploy no Vercel (remover pasta server e configurar como projeto estático)
-- [ ] Corrigir script de build no package.json para remover referência ao server
+- [x] Corrigir script de build no package.json para remover referência ao server
+- [ ] Criar Google Forms e integrar na landing page
