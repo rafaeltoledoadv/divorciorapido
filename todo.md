@@ -44,4 +44,5 @@
 - [ ] Configurar domínio divorcioem1dia.com
 
 ## Correções
-- [ ] Corrigir erro de deploy no Vercel (remover pasta server e configurar como projeto estático)
+- [x] Corrigir erro de deploy no Vercel (remover pasta server e configurar como projeto estático)
+- [ ] Corrigir script de build no package.json para remover referência ao server
