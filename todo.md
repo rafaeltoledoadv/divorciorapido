@@ -46,4 +46,5 @@
 ## Correções
 - [x] Corrigir erro de deploy no Vercel (remover pasta server e configurar como projeto estático)
 - [x] Corrigir script de build no package.json para remover referência ao server
-- [ ] Criar Google Forms e integrar na landing page
+- [x] Criar Google Forms e integrar na landing page
+- [ ] Substituir Jotform por Formspree (sem anúncios)
